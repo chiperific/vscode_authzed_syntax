@@ -1,0 +1,25 @@
+{
+  "name": "authzed",
+  "displayName": "authzed-language-support",
+  "description": "Authzed language support for .zed files",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.76.0"
+  },
+  "categories": [
+    "Programming Languages"
+  ],
+  "contributes": {
+    "languages": [{
+      "id": "authzed",
+      "aliases": ["Authzed", "authzed"],
+      "extensions": [".zed"],
+      "configuration": "./language-configuration.json"
+    }],
+    "grammars": [{
+      "language": "authzed",
+      "scopeName": "source.authzed",
+      "path": "./syntaxes/JSON-compare.tmLanguage.json"
+    }]
+  }
+}
