@@ -15,8 +15,3 @@ Add it via the [VS Code marketplace](https://marketplace.visualstudio.com/items?
 
 * Check out VS Code's [Syntax Highlight Guide](https://code.visualstudio.com/api/language-extensions/syntax-highlight-guide)
 * Also highly recommend reading (actually reading, not skimming) [Matt Neuburg's trip into Writing a TextMate Grammar file](https://www.apeth.com/nonblog/stories/textmatebundle.html)
-
-## Release Notes
-
-### 0.1.0
-In development
