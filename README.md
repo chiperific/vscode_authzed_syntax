@@ -9,7 +9,7 @@
 This extension models syntax highlighting based off [Authzed's own docs](https://authzed.com/docs/reference/schema-lang)
 
 ## Usage
-Add it via the [VS Code marketplace](https://marketplace.visualstudio.com/manage/publishers/chiperific)
+Add it via the [VS Code marketplace](https://marketplace.visualstudio.com/items?itemName=chiperific.authzed)
 
 ## Want to improve it?
 
