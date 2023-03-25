@@ -3,7 +3,7 @@
   "publisher": "chiperific",
   "displayName": "authzed-language-support",
   "description": "Authzed language support for .zed files",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "engines": {
     "vscode": "^1.76.0"
   },
