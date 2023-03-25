@@ -1,8 +1,9 @@
 {
   "name": "authzed",
+  "publisher": "chiperific",
   "displayName": "authzed-language-support",
   "description": "Authzed language support for .zed files",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "engines": {
     "vscode": "^1.76.0"
   },
@@ -11,7 +12,6 @@
     "url": "https://github.com/chiperific/vscode_authzed_syntax.git"
   },
   "homepage": "https://github.com/chiperific/vscode_authzed_syntax",
-
   "categories": [
     "Programming Languages"
   ],
@@ -22,12 +22,19 @@
     "SpiceDb"
   ],
   "contributes": {
-    "languages": [{
-      "id": "authzed",
-      "aliases": ["Authzed", "authzed"],
-      "extensions": [".zed"],
-      "configuration": "./language-configuration.json"
-    }],
+    "languages": [
+      {
+        "id": "authzed",
+        "aliases": [
+          "Authzed",
+          "authzed"
+        ],
+        "extensions": [
+          ".zed"
+        ],
+        "configuration": "./language-configuration.json"
+      }
+    ],
     "grammars": [
       {
         "language": "authzed",
@@ -35,5 +42,8 @@
         "path": "./syntaxes/authzed.tmGrammar.json"
       }
     ]
+  },
+  "dependencies": {
+    "plist2": "^1.1.3"
   }
 }
