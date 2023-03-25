@@ -1,0 +1,141 @@
+{
+	"version": "0.1",
+	"name": "Authzed",
+	"scopeName": "source.authzed",
+  "foldingStartMarker": "\\{\\s*$",
+  "foldingStopMarker": "^\\s*\\}",
+	"patterns": [
+    { "include": "#comment" },
+    { "include": "#objectDefinition" },
+    { "include": "#relation" },
+    { "include": "#permission" },
+    { "include": "#operator" },
+    { "include": "#prefix" }
+  ],
+  "repository": {
+    "operator": {
+      "patterns": [
+        {
+          "comment": "operators for relations ( : assigns, | or )",
+          "match": "((?<=\\s)={1,2}(?=\\s)|:(?=\\s)|(?<=\\s)\\|(?=\\s)|(?<=\\s)\\+(?=\\s)|(?<=\\s)&(?=\\s)|(?<=\\s)-(?=\\s)|(?<=\\w)->(?=\\w))",
+          "name": "storage.type.authzed"
+        }
+      ]
+    },
+    "comment": {
+      "patterns": [
+        { "include": "#lineComment" },
+        { "include": "#blockComment" }
+      ],
+      "repository": {
+        "lineComment": {
+          "patterns": [
+            { "include": "#doubleSlashLineComment" },
+            { "include": "#slashDotLineComment" }
+          ],
+          "repository": {
+            "doubleSlashLineComment": {
+              "match": "\\/\\/.*",
+              "name": "comment.line.double-slash.authzed"
+            },
+            "slashDotLineComment": {
+              "match": "\\/\\*.*\\*\\/",
+              "name": "comment.line.authzed"
+            }
+          }
+        },
+        "blockComment": {
+          "begin": "\\/\\*",
+          "end": "\\*\\/",
+          "name": "comment.block.authzed"
+        }
+      }
+    },
+    "prefix": {
+      "comment": "words ending in / or # connected to another word",
+      "match": "(?<=\\s)\\w+(\\/|#)(?=\\w)",
+      "name": "comment.line.authzed"
+    },
+    "objectDefinition": {
+      "comment": "things that appear on lines that start with caveat or definition",
+      "patterns": [
+        { "include": "#definition" },
+        { "include": "#definitionMethodName" },
+        { "include": "#caveat" },
+        { "include": "#caveatMethodName" },
+        { "include": "#methodVariable" }
+      ],
+      "repository": {
+        "definition": {
+          "patterns": [
+            {
+              "comment": "the word definition",
+              "match": "^\\s*definition",
+              "name": "keyword.control.class.authzed"
+            }
+          ]
+        },
+        "definitionMethodName": {
+          "patterns": [
+            {
+              "comment": "the word right before an open bracket",
+              "match": "\\w+(?=\\s+\\{)",
+              "name": "entity.name.type.class.authzed"
+            }
+          ]
+        },
+        "caveat": {
+          "patterns": [
+            {
+              "comment": "the word caveat",
+              "match": "^\\s*caveat",
+              "name": "keyword.control.class.authzed"
+            }
+          ]
+        },
+        "caveatMethodName": {
+          "patterns": [
+            {
+              "comment": "the word following caveat before an open parentheses",
+              "match": "(?<=caveat)\\s+\\w+(?=\\()",
+              "name": "entity.name.type.class.authzed"
+            }
+          ]
+        },
+
+        "methodVariable": {
+          "patterns": [
+            {
+              "comment": "words preceeded by an open parentheses or a comma + space(s)",
+              "match": "((?<=\\()\\w+\\b|(?<=,\\s+)\\w+\\b)",
+              "name": "variable.parameter.authzed"
+            },
+            {
+              "comment": "type words",
+              "match": "(\\b(?=(?:any|int|uint|bool|string|double|bytes|duration|timestamp|list|map|ipaddress)\\b)\\w+)",
+              "name": "storage.type.authzed"
+            }
+          ]
+        }
+      }
+    },
+    "relation": {
+      "patterns": [
+        {
+          "comment": "the word relation",
+          "match": "^\\s*relation",
+          "name": "entity.name.function.authzed"
+        }
+      ]
+    },
+    "permission": {
+      "patterns": [
+        {
+          "comment": "the word permission",
+          "match": "^\\s+permission",
+          "name": "entity.name.type.authzed"
+        }
+      ]
+    }
+  }
+}
