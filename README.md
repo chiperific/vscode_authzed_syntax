@@ -15,8 +15,5 @@ This extension models syntax highlighting based off [Authzed's own docs](https:/
 
 ## Release Notes
 
-Users appreciate release notes as you update your extension.
-
-### 1.0.0
-
-Initial release
+### 0.1.0
+In development
