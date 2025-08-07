@@ -2,6 +2,9 @@
 
 All notable changes to the "authzed" extension will be documented in this file.
 
+## [1.1.0]
+- Deprecated in favor of AuthZed's own extension: https://marketplace.visualstudio.com/items?itemName=authzed.spicedb-vscode
+
 ## [1.0.0]
 - Finish mapping grammar names to tokens
 - Deviate from [Authzed's displayed color patterns](https://authzed.com/docs/reference/schema-lang) in favor of more standard VS Code language grammars
